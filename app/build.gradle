@@ -1,0 +1,8 @@
+apply from: rootProject.file('application.gradle')
+
+dependencies {
+    implementation gradle.ext.dependencies["appcompat"]
+    implementation gradle.ext.dependencies["constraintlayout"]
+
+    implementation project(':homepage')
+}

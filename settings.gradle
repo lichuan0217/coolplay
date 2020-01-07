@@ -1,0 +1,13 @@
+apply from: file('config.gradle')
+
+rootProject.name = 'coolpaly'
+include ':app'
+
+// business
+include ':homepage'
+project(':homepage').projectDir = new File(settingsDir, 'business/homepage')
+
+
+// basic
+include ':basicnetwork'
+project(':basicnetwork').projectDir = new File(settingsDir, 'basic/basicnetwork')

@@ -1,0 +1,31 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+android {
+    compileSdkVersion gradle.ext.android["compileSdkVersion"]
+    buildToolsVersion gradle.ext.android["buildToolsVersion"]
+
+
+    defaultConfig {
+        minSdkVersion gradle.ext.android["minSdkVersion"]
+        targetSdkVersion gradle.ext.android["targetSdkVersion"]
+        versionCode gradle.ext.android["versionCode"]
+        versionName gradle.ext.android["versionName"]
+
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation gradle.ext.kotlin_stdlib
+    implementation gradle.ext.dependencies["core_ktx"]
+}

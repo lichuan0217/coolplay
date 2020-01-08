@@ -4,6 +4,7 @@ apply from: rootProject.file("library.gradle")
 dependencies {
     implementation gradle.ext.dependencies["appcompat"]
     implementation gradle.ext.dependencies["constraintlayout"]
+    implementation gradle.ext.dependencies["material"]
 
     implementation project(':basicnetwork')
 }
